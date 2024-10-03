@@ -1,0 +1,49 @@
+---
+import TailWindIcon from "./icons/TailWindIcon.astro";
+
+const TAGS = {
+    NEXT: {
+        name: 'Next.js',
+        class: 'bg-black text-white',
+        icon: TailWindIcon,
+    },
+    TAILWIND: {
+        name: 'Tailwind CSS',
+        class: "bg-white text-[#73bcf6]",
+        icon:  TailWindIcon,
+    },
+}
+
+
+
+const PROJECTS = [
+    {
+        title: 'Calories Tracker',
+        description: 'App developed on React using TS and Tailwind CSS, it tracks total calories from excercise and eating food',
+        link: 'https://nrs-calories-tracker.netlify.app/',
+        github: 'https://github.com/nrsanchezfiuba/calories_tracker_React_TS',
+        image: 'public/projects/img_project_calories.webp',
+        tags: [TAGS.TAILWIND],
+    }
+]
+---
+
+{
+    PROJECTS.map(({image, title, description, tags}) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-orange-300 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class ="flex gap-x-4 flex-row mb-3">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4"/>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Project Image ${image}`}/>
+        </article>
+        ) )
+    }
