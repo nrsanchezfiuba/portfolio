@@ -1,8 +1,4 @@
 ---
-import Header from "../components/Header.astro";
-// Supports weights 200-800
-import '@fontsource-variable/dosis';
-
 const { title } = Astro.props;
 ---
 
@@ -19,7 +15,6 @@ const { title } = Astro.props;
 
 	<body>
 	<div class="relative h-full w-full bg-slate-950"/>
-		<Header/>
 		<slot />
 	</body>
 </html>

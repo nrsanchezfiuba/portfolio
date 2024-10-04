@@ -10,10 +10,14 @@ import CodeIcon from "../components/icons/CodeIcon.astro";
 import Projects from "../components/Projects.astro";
 import Footer from "../components/Footer.astro";
 import Avatar from "../components/icons/Avatar.astro";
+import Header from "../components/Header.astro";
+// Supports weights 200-800
+import '@fontsource-variable/dosis';
 ---
 
 <Layout title="Portfolio nick4 - Software Developer.">
 	<main class="px-2">
+		<Header/>
 		<SectionContainer id="top" class="w-full lg:w-[740px] mx-auto py-18">
 			<Avatar/>
 			<h1 class="text-white text-3xl lg:text-5xl font-bold flex flex-row
