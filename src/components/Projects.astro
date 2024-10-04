@@ -19,10 +19,10 @@ const TAGS = {
 const PROJECTS = [
     {
         title: 'Calories Tracker',
-        description: 'App developed on React using TS and Tailwind CSS, it tracks total calories from excercise and eating food',
+        description: 'App developed on React using TS and Tailwind CSS, it tracks total calories from exercise and eating food',
         link: 'https://nrs-calories-tracker.netlify.app/',
         github: 'https://github.com/nrsanchezfiuba/calories_tracker_React_TS',
-        image: 'public/projects/img_project_calories.webp',
+        image: '/src/images/projects/img_project_calories.webp',
         tags: [TAGS.TAILWIND],
     }
 ]
@@ -43,7 +43,7 @@ const PROJECTS = [
                     </li>
                 ))}
             </ul>
-            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Project Image ${image}`}/>
+            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Project ${image}`}/>
         </article>
         ) )
     }
