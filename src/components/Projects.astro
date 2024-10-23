@@ -4,6 +4,8 @@ import ReactIcon from "./icons/ReactIcon.astro"
 import TypescriptIcon from "./icons/TypescriptIcon.astro"
 import CppIcon from "./icons/CppIcon.astro"
 import GitHubIcon from "./icons/GitHubIcon.astro";
+import projectCaloriesImg from "../images/projects/img_project_calories.webp";
+import jackRabbitImg from "../images/projects/jackrabbit.webp"
 
 const TAGS = {
     NEXT: {
@@ -34,13 +36,14 @@ const TAGS = {
 }
 
 
+
 const PROJECTS = [
     {
         title: 'Calories Tracker',
         description: 'App developed on React using TS and Tailwind CSS, it tracks total calories from exercise and eating food',
         link: 'https://nrs-calories-tracker.netlify.app/',
         github: 'https://github.com/nrsanchezfiuba/calories_tracker_React_TS',
-        image: '/src/images/projects/img_project_calories.webp',
+        image: projectCaloriesImg.src,
         tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.TYPESCRIPT],
     },
     {
@@ -48,7 +51,7 @@ const PROJECTS = [
         description: 'A videogame remake from Jaz Jackrabbit 2, developed in c++ with my college team, a multiplayer game implemented with web socket connection',
         link: 'https://atusgames.github.io/#/jazz-jackrabbit-2-remake',
         github: 'https://github.com/SantiSev/jazz-jackrabbit-2-remake',
-        image: '/src/images/projects/jackrabbit.webp',
+        image: jackRabbitImg.src,
         tags: [TAGS.CPP ],
     }
 ]
@@ -56,7 +59,7 @@ const PROJECTS = [
 
 {
     PROJECTS.map(({image, title, description, tags,link,github}) => (
-        <article class="">
+        <article>
             <h3 class="text-2xl font-semibold text-orange-300 mb-1.5">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul class ="flex gap-x-4 flex-row mb-3">
