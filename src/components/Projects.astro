@@ -1,5 +1,9 @@
 ---
 import TailWindIcon from "./icons/TailWindIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro"
+import TypescriptIcon from "./icons/TypescriptIcon.astro"
+import CppIcon from "./icons/CppIcon.astro"
+import GitHubIcon from "./icons/GitHubIcon.astro";
 
 const TAGS = {
     NEXT: {
@@ -12,8 +16,22 @@ const TAGS = {
         class: "bg-white text-[#73bcf6]",
         icon:  TailWindIcon,
     },
+    REACT: {
+        name: 'React',
+        class: "bg-sky-900 text-[#1E90FF]",
+        icon:  ReactIcon,
+    },
+    TYPESCRIPT: {
+        name: 'Typescript',
+        class: "bg-blue-950 text-[#1E90FF]",
+        icon:  TypescriptIcon,
+    },
+    CPP: {
+        name: 'c++',
+        class: "bg-slate-800 text-[#1E90FF]",
+        icon:  CppIcon,
+    },
 }
-
 
 
 const PROJECTS = [
@@ -23,15 +41,23 @@ const PROJECTS = [
         link: 'https://nrs-calories-tracker.netlify.app/',
         github: 'https://github.com/nrsanchezfiuba/calories_tracker_React_TS',
         image: '/src/images/projects/img_project_calories.webp',
-        tags: [TAGS.TAILWIND],
+        tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.TYPESCRIPT],
+    },
+    {
+        title: 'Jaz Jackrabbit 2 remake',
+        description: 'A videogame remake from Jaz Jackrabbit 2, developed in c++ with my college team, a multiplayer game implemented with web socket connection',
+        link: 'https://atusgames.github.io/#/jazz-jackrabbit-2-remake',
+        github: 'https://github.com/SantiSev/jazz-jackrabbit-2-remake',
+        image: '/src/images/projects/jackrabbit.webp',
+        tags: [TAGS.CPP ],
     }
 ]
 ---
 
 {
-    PROJECTS.map(({image, title, description, tags}) => (
-        <article>
-            <h3 class="text-2xl font-semibold text-orange-300 mb-2">{title}</h3>
+    PROJECTS.map(({image, title, description, tags,link,github}) => (
+        <article class="">
+            <h3 class="text-2xl font-semibold text-orange-300 mb-1.5">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul class ="flex gap-x-4 flex-row mb-3">
                 {tags.map((tag) => (
@@ -43,7 +69,21 @@ const PROJECTS = [
                     </li>
                 ))}
             </ul>
-            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Project ${image}`}/>
+            <img class="mb-2.5 rounded-xl hover:rotate-6 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-110 transform origin-bottom
+             shadow-2xl shadow-white/10 " src={image} alt={`Project ${image}`}/>
+            <div>
+                <a href=`${github}` class="mb-2.5 bg-gray-600 inline-flex items-center justify-center p-3 text-base font-medium text-white rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <GitHubIcon class="md:size-6 size-8 mr-2" />
+                    <span class="w-full">Repository</span>
+                    <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+            <div>
+                <a href=`${link}` class="mb-24 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 inline-flex items-center justify-center font-medium rounded-lg text-sm p-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Web Page</a>
+            </div>
+
         </article>
         ) )
     }

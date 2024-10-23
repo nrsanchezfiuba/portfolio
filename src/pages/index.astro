@@ -16,7 +16,9 @@ import '@fontsource-variable/dosis';
 ---
 
 <Layout title="Portfolio nick4 - Software Developer.">
-	<main class="px-2">
+	<div id="preloader"><h1 class="text-center text-4xl">Loading Page...</h1></div>
+	<main class="px-2 bg-[url('src/images/bg.jpg')]"
+	>
 		<Header/>
 		<SectionContainer id="top" class="w-full lg:w-[740px] mx-auto py-18">
 			<Avatar/>
@@ -57,5 +59,26 @@ import '@fontsource-variable/dosis';
 
 		</SectionContainer>
 		<Footer/>
+
+		<script>
+			let loaded = false
+			let enoughTimePassed = false
+
+			window.addEventListener("load", function() {
+				if (enoughTimePassed) { hidePreloader() }
+				loaded = true
+
+			})
+
+			setTimeout(() => {
+				if (loaded) { hidePreloader() }
+				enoughTimePassed = true
+			}, 3000)
+
+			function hidePreloader() {
+				document.getElementById("preloader").remove()
+			}
+		</script>
+
 	</main>
 </Layout>
