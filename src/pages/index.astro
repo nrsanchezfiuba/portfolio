@@ -76,7 +76,10 @@ import '@fontsource-variable/dosis';
 			}, 3000)
 
 			function hidePreloader() {
-				document.getElementById("preloader").remove()
+				const preloader = document.getElementById("preloader");
+				if (preloader) {
+					preloader.remove();
+				}
 			}
 		</script>
 
