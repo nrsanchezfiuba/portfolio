@@ -220,12 +220,27 @@
             padding: 2px 2px;
         }
         .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+            transition: color 0.5s ease;
+            pointer-events: all;
             font-size: 14px;
             align-items: center;
         }
         .menu-button{
             display: none;
             font-size: 12px;
+        }
+        .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link.hover-active {
+            color: #B53471;
+            animation: hoverEffectMobile 0.8s forwards;
+        }
+
+        @keyframes hoverEffectMobile {
+            0% {
+                color: #fff;
+            }
+            100% {
+                color: #B53471;
+            }
         }
     }
 
@@ -245,5 +260,16 @@
                 logo.style.color = '';
             }
         }
+    });
+</script>
+
+<script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('touchstart', () => {
+            link.classList.add('hover-active');
+            setTimeout(() => {
+                link.classList.remove('hover-active');
+            }, 800);
+        });
     });
 </script>
