@@ -1,3 +1,5 @@
+---
+---
 <body>
     <header id="main-head" class="main-head flex justify-center items-center py-5 w-full xl:w-[1120xp] mx-auto">
         <div class="container">
@@ -193,7 +195,40 @@
     }
 
 
+    /*for mobile responsiveness*/
+    @media (max-width: 768px) {
+        .container {
+            width: 100%;
+            padding: 0 15px;
+            justify-content: space-between;
+        }
 
+        .main-head {
+            padding: 0;
+            height: auto;
+        }
+
+        .main-head .main-menu .logo {
+            font-size: 20px;
+        }
+
+        .main-head .main-menu .nav-menu .nav-list {
+            flex-direction: column;
+            display: none;
+        }
+
+        .main-head .main-menu .nav-menu.active .nav-list {
+            display: flex;
+        }
+
+        .main-head .main-menu .nav-menu .nav-list .nav-list-item {
+            padding: 10px 15px;
+        }
+
+        .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+            font-size: 16px;
+        }
+    }
 
 </style>
 
