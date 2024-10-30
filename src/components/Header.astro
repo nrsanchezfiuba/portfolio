@@ -24,7 +24,6 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </header>
@@ -196,37 +195,37 @@
 
 
     /*for mobile responsiveness*/
-    @media (max-width: 768px) {
+    @media screen and (max-width: 768px) {
         .container {
             width: 100%;
-            padding: 0 15px;
-            justify-content: space-between;
+            padding-bottom: 0;
+            justify-content: space-between ;
+            align-items: center;
         }
-
         .main-head {
             padding: 0;
             height: auto;
         }
-
         .main-head .main-menu .logo {
-            font-size: 20px;
-        }
-
-        .main-head .main-menu .nav-menu .nav-list {
-            flex-direction: column;
             display: none;
         }
-
+        .main-head .main-menu .nav-menu .nav-list {
+            flex-direction: row;
+            padding-bottom: 0;
+        }
         .main-head .main-menu .nav-menu.active .nav-list {
             display: flex;
         }
-
         .main-head .main-menu .nav-menu .nav-list .nav-list-item {
-            padding: 10px 15px;
+            padding: 2px 2px;
         }
-
         .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
-            font-size: 16px;
+            font-size: 14px;
+            align-items: center;
+        }
+        .menu-button{
+            display: none;
+            font-size: 12px;
         }
     }
 
