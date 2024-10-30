@@ -1,40 +1,215 @@
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120xp] mx-auto">
-    <style>
-        body {
-            margin: 0;
-            color: white;
-            background: #202731;
-        }
+<body>
+    <header id="main-head" class="main-head flex justify-center items-center py-5 w-full xl:w-[1120xp] mx-auto">
+        <div class="container">
+            <div class="main-menu">
+                <div class="logo">
+                    <span>Nick4</span>
+                </div>
+                <div class="nav-menu">
+                    <span></span>
+                    <ul class="nav-list">
+                        <li class="nav-list-item">
+                            <a class="nav-link" href="#top">Home</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a class="nav-link" href="#about me">About</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
 
-        section {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 400px;
-            padding: 100px 20vw;
-        }
-        .blue {
-            background: #3c31dd;
-        }
-        .red {
-            background: #dd3f31;
-        }
-        .pink {
-            background: #ff0066;
-        }
-        .dark {
-            background: #0f0f10;
-        }
+            </div>
+        </div>
+    </header>
+    <section class="showcase">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="content">
+                <h2></h2>
+            </div>
+        </div>
+    </section>
+</body>
 
-    </style>
 
-    <span></span>
 
-    <nav class="flex flex-row gap-x-10 opacity-80">
-        <a href="#top">Home</a>
-        <a href="#about me">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    .container{
+        width: 1280px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .main-head{
+        width: 100%;
+        height: 54px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        z-index: 9999;
+    }
+
+    .main-head.slidedown{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgb(55, 55, 55);
+        animation: slidedown .4s forwards;
+    }
+
+    @keyframes slidedown {
+        from{
+            top: -250px;
+        }
+        to{
+            top: 0;
+            box-shadow: 0 2px 8px 0 rgba(0,0,0,.2);
+        }
+    }
+
+    .main-head .main-menu{
+        width: 100%;
+        height: 54px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-head .main-menu .logo{
+        font-size: 25px;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .main-head .main-menu .nav-menu{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .main-head .main-menu .nav-menu .nav-list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-head .main-menu .nav-menu .nav-list .nav-list-item {
+        list-style: none;
+        padding: 15px 30px;
+    }
+
+
+
+    .main-head.slidedown .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+        color: #000;
+    }
+
+    .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link:hover{
+        color: #B53471;
+    }
+    .showcase {
+        width: 100%;
+        height: 56px;
+        background: url("https://i.ibb.co/zhzPj7b/banner.webp");
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .showcase .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0, .5);
+    }
+
+    .showcase .content{
+        padding: 0 230px 0 230px;
+        color: #fff;
+    }
+
+    .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link {
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 10px 10px;
+        margin: 0 5px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link::before,
+    .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link::after {
+        content: "";
+        position: absolute;
+        display: block;
+        border: 0px solid transparent;
+        width: 0%;
+        height: 0%;
+        transition: all 0.5s ease;
+    }
+
+    .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link::after {
+        top: 0;
+        left: 0;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+    }
+
+    .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link::before {
+        right: 0;
+        bottom: 0;
+        border-bottom: 2px solid transparent;
+        border-right: 2px solid transparent;
+    }
+
+    .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link:hover::before,
+    .main-head .main-menu .nav-menu .nav-list .nav-list-item .nav-link:hover::after {
+        width: 100%;
+        height: 100%;
+        border-color: #fff;
+    }
+
+
+
+
+</style>
+
+<script>
+    const mainHead = document.querySelector('.main-head') as HTMLElement | null;
+    const logo = document.querySelector('.logo') as HTMLElement | null;
+
+    window.addEventListener('scroll', function () {
+        if (mainHead && logo) {
+            if (window.scrollY > 100) {
+                mainHead.classList.add('slidedown');
+                logo.style.color = '#000';
+            } else {
+                mainHead.classList.remove('slidedown');
+                logo.style.color = '';
+            }
+        }
+    });
+</script>

@@ -1,0 +1,39 @@
+---
+import SocialPill from "./SocialPill.astro";
+import Badge from "./Badge.astro";
+import Avatar from "./icons/Avatar.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import MailIcon from "./icons/MailIcon.astro";
+import SectionContainer from "./SectionContainer.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+---
+<SectionContainer id="top" class="mt-2.5 w-full lg:w-[740px] mx-auto py-18">
+    <Avatar/>
+    <h1 class="text-white text-3xl lg:text-5xl font-bold flex flex-row
+			gap-x-4 pb-4 lg:pb-6">
+        Hello! I'm Nicolas! <a href="https://www.linkedin.com/in/nicolasrsanchez/"
+                               target="_blank"
+                               rel="noopener"
+                               class="flex justify-center items-center">
+        <Badge>Available for work</Badge>
+    </a>
+    </h1>
+    <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">I'm a <span class="text-orange-300">software engineer</span> student and I'm on my 4th year in <span class="text-blue-400">Buenos Aires, Argentina.</span>
+        I'm looking for a job to explore all kind of projects and increase my experience as a developer.
+    </h2>
+
+    <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://linkedin.com/in/nicolasrsanchez/">
+            <LinkedinIcon class="size-4 md:size-6" />
+            LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/nrsanchezfiuba/">
+            <GitHubIcon class="size-4 md:size-6" />
+            GitHub
+        </SocialPill>
+        <SocialPill href="mailto:nick4snz@gmail.com">
+            <MailIcon class="size-4 md:size-6" />
+            nick4snz@gmail.com
+        </SocialPill>
+    </nav>
+</SectionContainer>

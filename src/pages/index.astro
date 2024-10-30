@@ -1,16 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Badge from "../components/Badge.astro";
-import LinkedinIcon from "../components/icons/LinkedinIcon.astro";
-import SocialPill from "../components/SocialPill.astro";
-import GitHubIcon from "../components/icons/GitHubIcon.astro";
-import MailIcon from "../components/icons/MailIcon.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import CodeIcon from "../components/icons/CodeIcon.astro";
 import Projects from "../components/Projects.astro";
 import Footer from "../components/Footer.astro";
-import Avatar from "../components/icons/Avatar.astro";
 import Header from "../components/Header.astro";
+import PersonalData from "../components/PersonalData.astro"
 // Supports weights 200-800
 import '@fontsource-variable/dosis';
 ---
@@ -20,36 +15,7 @@ import '@fontsource-variable/dosis';
 	<main class="px-2 bg-[url('https://i.ibb.co/9g28byj/bg.jpg')]"
 	>
 		<Header/>
-		<SectionContainer id="top" class="w-full lg:w-[740px] mx-auto py-18">
-			<Avatar/>
-			<h1 class="text-white text-3xl lg:text-5xl font-bold flex flex-row
-			gap-x-4 pb-4 lg:pb-6">
-				Hello! I'm Nicolas! <a href="https://www.linkedin.com/in/nicolasrsanchez/"
-									   target="_blank"
-									   rel="noopener"
-									   class="flex justify-center items-center">
-					<Badge>Available for work</Badge>
-				</a>
-			</h1>
-			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">I'm a <span class="text-orange-300">software engineer</span> student and I'm on my 4th year in <span class="text-blue-400">Buenos Aires, Argentina.</span>
-				I'm looking for a job to explore all kind of projects and increase my experience as a developer.
-			 </h2>
-
-			<nav class="flex gap-4 mt-8 flex-wrap">
-				<SocialPill href="https://linkedin.com/in/nicolasrsanchez/">
-					<LinkedinIcon class="size-4 md:size-6" />
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="https://github.com/nrsanchezfiuba/">
-					<GitHubIcon class="size-4 md:size-6" />
-					GitHub
-				</SocialPill>
-				<SocialPill href="mailto:nick4snz@gmail.com">
-					<MailIcon class="size-4 md:size-6" />
-					nick4snz@gmail.com
-				</SocialPill>
-			</nav>
-		</SectionContainer>
+		<PersonalData/>
 		<SectionContainer id="projects">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<CodeIcon class="size-7" />
@@ -73,7 +39,7 @@ import '@fontsource-variable/dosis';
 			setTimeout(() => {
 				if (loaded) { hidePreloader() }
 				enoughTimePassed = true
-			}, 3000)
+			}, 100)
 
 			function hidePreloader() {
 				const preloader = document.getElementById("preloader");
